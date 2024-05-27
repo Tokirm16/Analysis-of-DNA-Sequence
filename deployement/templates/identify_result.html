@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Species Identification Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .species-info {
+            display: flex; /* Arrange information side-by-side */
+            margin-bottom: 20px;
+        }
+
+        .species-info img {
+            width: 200px;
+            margin-right: 20px;
+        }
+
+        .description {
+            flex: 1; /* Allow description text to fill remaining space */
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 45px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            float: left;
+            line-height: 1;
+            margin: -12px;
+        }
+
+        .header nav {
+            text-align: right;
+        }
+
+        .header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .header nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        .header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>DNA Analysis</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <h1>
+        Identified Species: {{ predict_class }}
+    </h1>
+    <div class="species-info">
+        <img src="{{ image_url }}" alt="{{ predict_class }} image">
+        <div class="description">
+            <h2>Species-Info</h2>
+            <p>{{ description }}</p>
+            <p>Habitat: {{ habitat }}</p>
+        </div>
+    </div>
+
+
+    <p><a href="{{ more_info_url }}">Learn more about {{ predict_class }}</a></p>
+
+</body>
+</html>

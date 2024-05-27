@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            display: flex; 
+            justify-content: space-between; 
+        }
+
+        .left-column {
+            flex: 1; 
+        }
+
+        .right-column {
+            flex: 1; 
+            margin-left: 20px; 
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        .container h1 {
+            color: #fff; /* Change to white color */
+        }
+
+        .container h1.classification-title {
+            color: #000; /* Change to black color */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 0; /* Decrease the top and bottom padding */
+            margin-bottom: 20px; 
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 0; 
+            padding-top: 17px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .home-link {
+            margin-bottom: 0; 
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DNA Analysis</h1>
+            <nav>
+                <ul>
+                    <li><a href="/" class="home-link">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left-column">
+            <h1 class="classification-title">Classification Result</h1>
+            {% if error %}
+                <p>{{ error }}</p>
+            {% else %}
+                <p>Predicted Class: {{ prediction }}</p>
+               
+            {% endif %}
+        </div>
+        <div class="right-column">
+            {% if class_details %}
+                <h2>Class Details</h2>
+                <p>Class_name: {{ class_details['class_name'] }}</p>
+                <p>Description: {{ class_details['description'] }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

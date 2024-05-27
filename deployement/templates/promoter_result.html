@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Sequence Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 45px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            float: left;
+            line-height: 1;
+            margin: -12px;
+
+        }
+
+        .header nav {
+            text-align: right;
+        }
+
+        .header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .header nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        .header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .result-card {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .dna-image {
+            width: 35%; /* Increased image width */
+            margin-left: 40px; /* Adjusted space between the text and the image */
+        }
+
+        .result-info {
+            text-align: left; /* Align text to the left */
+            width: 65%; /* Reduced width of the result-info div */
+            margin-right: 20px; /* Added margin to separate the image */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>DNA Analysis</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Result Card -->
+    <div class="result-card">
+        <div class="result-info">
+            <h2>Analysis Result: Promoter Prediction</h2>
+            <h1 class="prediction">{{ result }}</h1>
+            <p>This analysis indicates whether the provided DNA sequence is likely a promoter region.</p>
+            <h3>Promoter:</h3>
+            <p>Promoter sites regulate gene expression, serving as binding sites for transcription factors. Understanding their role aids in diagnosing diseases, predicting treatment responses, and advancing therapies like gene therapy and pharmacogenomics. Dysregulation in promoters can lead to diseases, making them crucial targets for research and drug development in medicine.</p>
+            <a href="https://www.genome.gov/genetics-glossary/Promoter">Know more about promoter</a>
+        </div>
+        <img src="static/Promotor.jpg" alt="Promoter Image" class="dna-image">
+    </div>
+</body>
+</html>
